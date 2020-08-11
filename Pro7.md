@@ -203,7 +203,7 @@ EXPECTED RESPONSE:
 COMMAND TO SEND:
 
 ```javascript
-{"action":"presentationTriggerIndex","slideIndex":3,"presentationPath":"[PRESENTATION PATH]"}
+{"action":"presentationTriggerIndex","slideIndex":"3","presentationPath":"[PRESENTATION PATH]"}
 ```
 
 EXPECTED RESPONSE:
@@ -211,6 +211,8 @@ EXPECTED RESPONSE:
 ```javascript
 {"slideIndex":3,"action":"presentationTriggerIndex","presentationPath":"[PRESENTATION PATH]"}
 ```
+
+* NOTE: ProPresenter 7 needs a string version of slideIndex, this seems to be a bug in the API.
 
 ### Trigger Next Slide
 
@@ -555,6 +557,22 @@ COMMAND TO SEND:
 
 ```javascript
 {"action":"clearTelestrator"}
+```
+
+### Clear Messages
+
+COMMAND TO SEND:
+
+```javascript
+{"action":"clearMessages"}
+```
+
+### Clear Announcements
+
+COMMAND TO SEND:
+
+```javascript
+{"action":"clearAnnouncements"}
 ```
 
 ### Clear To Logo
