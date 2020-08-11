@@ -212,7 +212,7 @@ EXPECTED RESPONSE:
 {"slideIndex":3,"action":"presentationTriggerIndex","presentationPath":"[PRESENTATION PATH]"}
 ```
 
-* NOTE: ProPresenter 7 needs a string version of slideIndex, this seems to be a bug in the API.
+* NOTE: ProPresenter 7 needs `slideIndex` sent as a string, not an integer. This seems to be a bug in the ProPresenter response.
 
 ### Trigger Next Slide
 
@@ -430,9 +430,31 @@ EXPECTED RESPONSE (every second):
 {"action":"clockCurrentTimes","clockTimes":["0:10:00","--:--:--","13:52:23"]}
 ```
 
-### Additional Clock Actions
+### Stop all Clocks (Timers)
 
-`clockResetAll`, `clockStopAll`, `clockStartAll`
+COMMAND TO SEND:
+
+```javascript
+{"action":"clockStopAll"}
+```
+
+
+### Reset all Clocks (Timers)
+
+COMMAND TO SEND:
+
+```javascript
+{"action":"clockResetAll"}
+```
+
+
+### Start all Clocks (Timers)
+
+COMMAND TO SEND:
+
+```javascript
+{"action":"clockStartAll"}
+```
 
 
 ### Get all Messages
