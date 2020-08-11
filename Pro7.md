@@ -212,7 +212,7 @@ EXPECTED RESPONSE:
 {"slideIndex":3,"action":"presentationTriggerIndex","presentationPath":"[PRESENTATION PATH]"}
 ```
 
-* NOTE: ProPresenter 7 needs `slideIndex` sent as a string, not an integer. This seems to be a bug in the ProPresenter response.
+* NOTE: ProPresenter 7 needs `slideIndex` sent as a string, not an integer. This seems to be a bug in the ProPresenter request.
 
 ### Trigger Next Slide
 
