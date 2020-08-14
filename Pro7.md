@@ -46,9 +46,9 @@ EXPECTED RESPONSE:
 ```javascript
 {
   "library": [
-    "\/Path\/To\/ProPresenter\/Library\/Come Alive (Dry Bones).pro6",
-    "\/Path\/To\/ProPresenter\/Library\/Pour Out My Heart.pro6",
-    "\/Path\/To\/ProPresenter\/Library\/Away in a manger.pro6",
+    "\/Path\/To\/ProPresenter\/Libraries\/[LIBRARY-NAME]\/Come Alive (Dry Bones).pro6",
+    "\/Path\/To\/ProPresenter\/Libraries\/[LIBRARY-NAME]\/Pour Out My Heart.pro6",
+    "\/Path\/To\/ProPresenter\/Libraries\/[LIBRARY-NAME]\/Away in a manger.pro6",
 	"... ALL PRESENTATIONS IN THE LIBRARY ..."
   ],
   "action": "libraryRequest"
@@ -120,7 +120,7 @@ COMMAND TO SEND:
 ```javascript
 {
     "action": "presentationRequest",
-    "presentationPath": "\/Path\/To\/ProPresenter\/Library\/Song 1 Title.pro6",
+    "presentationPath": "\/Path\/To\/ProPresenter\/Libraries\/[LIBRARY-NAME]\/Song 1 Title.pro6",
     "presentationSlideQuality": 25
 }
 ```
