@@ -1055,6 +1055,10 @@ EXPECTED RESPONSE:
   * mode 0: static image
   * mode 1: text
   * mode 2: live slide
+* frame text align is indicated by `tAl`
+  * 0: left
+  * 1: right
+  * 2: centre
 * frame type is indicated by `typ` and determines what content goes in this frame
   * type 1: current slide
   * type 2: next slide
