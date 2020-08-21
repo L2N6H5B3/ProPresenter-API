@@ -3,7 +3,7 @@
 # ProPresenter-API
 Documenting RenewedVision's undocumented network protocols with examples
 
-This document refers to *ProPresenter 6*.
+This document refers to *ProPresenter 7*.
 
 Both the Remote Control and the Stage Display protocols are unencrypted text-based websocket connections from the client to the ProPresenter instance.
 
@@ -722,7 +722,7 @@ EXPECTED RESPONSE:
 {"acn":"ath","ath":true,"err":""}
 ```
 
-### Get All Stage Display Layouts
+### Get All Stage Screens and their Stage Display Layouts
 
 COMMAND TO SEND:
 
@@ -1155,18 +1155,28 @@ EXPECTED RESPONSE:
 
 * `acn` of `sl` indicates this is a single stage layout
 
-### Request Current Stage Display Layout
+### Request Current Stage Display Layouts
 
 COMMAND TO SEND:
 
 ```javascript
-{"acn":"psl"}
+{"acn":"saa"}
 ```
 
-EXPECTED RESPONSE (also used when stage display is updated):
+EXPECTED RESPONSE (also used when stage display is updated for any stage screen):
 
 ```javascript
-{"acn":"psl","uid":"[STAGE DISPLAY UID]"}
+{
+    "acn": "saa",
+    "asgns": [
+        {
+            "scnnme": "[STAGE SCREEN NAME]",
+            "scnuid": "[STAGE SCREEN UID]",
+            "lytnme": "[STAGE LAYOUT NAME]",
+            "lytuid": "[STAGE LAYOUT UID]"
+        }
+    ]
+}
 ```
 
 ### Request Frame Values for Stage Display
