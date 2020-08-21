@@ -713,7 +713,7 @@ ws://[host]:[port]/stagedisplay
 COMMAND TO SEND:
 
 ```javascript
-{"pwd":PASSWORD,"ptl":610,"acn":"ath"}
+{"pwd":"[PASSWORD]","ptl":610,"acn":"ath"}
 ```
 
 EXPECTED RESPONSE:
