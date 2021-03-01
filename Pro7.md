@@ -137,6 +137,7 @@ EXPECTED RESPONSE:
 ```javascript
 {
     "action": "presentationCurrent",
+    "presentationDestination": 0,
     "presentation": {
         "presentationSlideGroups": [
             {
@@ -159,7 +160,8 @@ EXPECTED RESPONSE:
         ],
         "presentationName": "[PRESENTATION TITLE]",
         "presentationHasTimeline": 0,
-        "presentationCurrentLocation": "[PRESENTATION PATH OF CURRENTLY ACTIVE SLIDE]"
+        "presentationCurrentLocation": "[PRESENTATION PATH OF CURRENTLY ACTIVE SLIDE]",
+	"presentationDestination": 0
     }
 }
 ```
@@ -167,6 +169,7 @@ EXPECTED RESPONSE:
 * The response contains `presentationCurrent` as the action instead of `presentationRequest`. This seems to be a bug in the ProPresenter response.
 * The `presentationCurrentLocation` is not the location of the presentation you requested. It is the path of the presentation whose slide is currently active.
 * You can distinguish this response from the real `presentationCurrent` request because that response will include `presentationPath` as a field at the root level of the response.
+* `presentationDestination` indicates whether or not the presentation is destined for the main output (`0`) or the announcements layer (`1`).
 
 ### Request Current Presentation
 
@@ -209,7 +212,7 @@ COMMAND TO SEND:
 EXPECTED RESPONSE:
 
 ```javascript
-{"slideIndex":3,"action":"presentationTriggerIndex","presentationPath":"[PRESENTATION PATH]"}
+{"slideIndex":3,"action":"presentationTriggerIndex","presentationPath":"[PRESENTATION PATH]","presentationDestination":0}
 ```
 
 * NOTE: ProPresenter 7 needs `slideIndex` sent as a string, not an integer. This seems to be a bug in the ProPresenter request.
